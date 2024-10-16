@@ -68,7 +68,7 @@ function Fetch() {
             <div key={index}>
               <Card sx={{ maxWidth: "100%" }}>
                 <CardMedia
-                  sx={{ height: 200, width: 200 }}
+                  sx={{ margin: "auto", height: 200, width: 200 }}
                   image={pokemon.other.sprites.front_default}
                   title={pokemon.name}
                 />
