@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
-import RestoreIcon from "@mui/icons-material/Restore";
+import HouseIcon from "@mui/icons-material/House";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
 import { useState } from "react";
@@ -29,7 +29,7 @@ const Navbar = () => {
         <BottomNavigationAction
           onClick={() => navigate("/")}
           label="Home"
-          icon={<RestoreIcon />}
+          icon={<HouseIcon />}
         />
         <BottomNavigationAction
           onClick={() => navigate("/Kanto")}
