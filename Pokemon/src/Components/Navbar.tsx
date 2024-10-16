@@ -32,14 +32,14 @@ const Navbar = () => {
           icon={<RestoreIcon />}
         />
         <BottomNavigationAction
-          onClick={() => navigate("/kanto")}
-          label="Gen 1"
-          icon={<CatchingPokemonIcon />}
+          onClick={() => navigate("/Kanto")}
+          label="Kanto"
+          icon={<LocationOnIcon />}
         />
         <BottomNavigationAction
           onClick={() => navigate("/fetch")}
-          label="Coming soon"
-          icon={<LocationOnIcon />}
+          label="Gen 1"
+          icon={<CatchingPokemonIcon />}
         />
       </BottomNavigation>
     </Box>
