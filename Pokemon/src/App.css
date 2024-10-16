@@ -227,3 +227,102 @@
   width: 55px;
   height: 45px;
 }
+
+.route12{
+  position: absolute;
+  top: 380px;
+  right: 0;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route13{
+  position: absolute;
+  top: 550px;
+  right: 0;
+  background-color: blue;
+  width: 55px;
+  height: 80px;
+}
+
+.route14{
+  position: absolute;
+  top: 600px;
+  right: 160px;
+  background-color: blue;
+  width: 55px;
+  height: 80px;
+}
+
+.route15{
+  position: absolute;
+  top: 680px;
+  right: 230px;
+  background-color: blue;
+  width: 75px;
+  height: 50px;
+}
+
+.safariZone{
+  position: absolute;
+  top: 660px;
+  right: 410px;
+  background-color: blue;
+  width: 25px;
+  height: 25px;
+}
+
+.fuchsiaCity{
+  position: absolute;
+  top: 700px;
+  right: 380px;
+  background-color: blue;
+  width: 85px;
+  height: 50px;
+}
+
+.route18{
+  position: absolute;
+  top: 685px;
+  left: 335px;
+  background-color: blue;
+  width: 85px;
+  height: 40px;
+}
+
+.cyclingRoad{
+  position: absolute;
+  top: 385px;
+  left: 290px;
+  background-color: blue;
+  width: 55px;
+  height: 200px;
+}
+
+.route16{
+  position: absolute;
+  top: 285px;
+  left: 320px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.celadonCity{
+  position: absolute;
+  top: 275px;
+  left: 420px;
+  background-color: blue;
+  width: 90px;
+  height: 60px;
+}
+
+.route8{
+  position: absolute;
+  top: 285px;
+  left: 525px;
+  background-color: blue;
+  width: 55px;
+  height: 45px;
+}

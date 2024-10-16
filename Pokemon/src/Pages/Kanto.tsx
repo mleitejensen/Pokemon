@@ -35,6 +35,7 @@ const Kanto = () => {
         <div className="powerPlant"></div>
         <div className="route9"></div>
         <div className="celadonCity"></div>
+        <div className="route8"></div>
         <div className="route16"></div>
         <div className="cyclingRoad"></div>
         <div className="route18"></div>
