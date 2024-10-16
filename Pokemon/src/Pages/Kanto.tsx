@@ -30,7 +30,7 @@ const Kanto = () => {
         <div className="route7"></div>
         <div className="route11"></div>
         <div className="route12"></div>
-        <div className="lavendertown"></div>
+        <div className="lavenderTown"></div>
         <div className="rockTunnel"></div>
         <div className="powerPlant"></div>
         <div className="route9"></div>
@@ -44,6 +44,10 @@ const Kanto = () => {
         <div className="route13"></div>
         <div className="route14"></div>
         <div className="route15"></div>
+        <div className="route19"></div>
+        <div className="seafoamIslands"></div>
+        <div className="route20"></div>
+        <div className="cinnabarIsland"></div>
       </div>
     </>
   );

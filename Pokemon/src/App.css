@@ -326,3 +326,93 @@
   width: 55px;
   height: 45px;
 }
+
+.lavenderTown{
+  position: absolute;
+  top: 265px;
+  right: 0px;
+  background-color: blue;
+  width: 55px;
+  height: 65px;
+}
+
+.rockTunnel{
+  position: absolute;
+  top: 225px;
+  right: 20px;
+  background-color: blue;
+  width: 25px;
+  height: 25px;
+}
+
+.powerPlant{
+  position: absolute;
+  top: 185px;
+  right: 20px;
+  background-color: blue;
+  width: 30px;
+  height: 30px;
+}
+
+.route9{
+  position: absolute;
+  top: 115px;
+  right: 10px;
+  background-color: blue;
+  width: 200px;
+  height: 30px;
+}
+
+.route24{
+  position: absolute;
+  top: 35px;
+  right: 245px;
+  background-color: blue;
+  width: 40px;
+  height: 60px;
+}
+
+.route25{
+  position: absolute;
+  top: 5px;
+  right: 100px;
+  background-color: blue;
+  width: 140px;
+  height: 30px;
+}
+
+.route19{
+  position: absolute;
+  bottom: 10px;
+  left: 450px;
+  background-color: blue;
+  width: 50px;
+  height: 80px;
+}
+
+.seafoamIslands{
+  position: absolute;
+  bottom: 2px;
+  left: 300px;
+  background-color: blue;
+  width: 60px;
+  height: 40px;
+}
+
+.route20{
+  position: absolute;
+  bottom: 2px;
+  left: 210px;
+  background-color: blue;
+  width: 85px;
+  height: 40px;
+}
+
+.cinnabarIsland{
+  position: absolute;
+  bottom: 2px;
+  left: 130px;
+  background-color: blue;
+  width: 55px;
+  height: 60px;
+}
