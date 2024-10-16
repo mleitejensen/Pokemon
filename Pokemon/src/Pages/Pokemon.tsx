@@ -24,10 +24,19 @@ interface Pokemon {
     front_default: string | undefined;
   };
   moves: Array<Move>;
+  types: Array<Types>;
 }
 
 interface Move {
   move: {
+    name: string;
+    url: string;
+  };
+}
+
+interface Types {
+  slot: number;
+  type: {
     name: string;
     url: string;
   };
@@ -60,6 +69,59 @@ const Pokemon = () => {
     );
   }
 
+  const checkType = (type: string) => {
+    if (type === "ground") {
+      return "#70461e solid 2px";
+    }
+    if (type === "rock") {
+      return "#515455aa solid 2px";
+    }
+    if (type === "electric") {
+      return "yellow solid 2px";
+    }
+    if (type === "water") {
+      return "blue solid 2px";
+    }
+    if (type === "fire") {
+      return "red solid 2px";
+    }
+    if (type === "flying") {
+      return "grey solid 2px";
+    }
+    if (type === "normal") {
+      return "white solid 2px";
+    }
+    if (type === "poison") {
+      return "purple solid 2px";
+    }
+    if (type === "bug") {
+      return "green solid 2px";
+    }
+    if (type === "grass") {
+      return "#0a570a solid 2px";
+    }
+    if (type === "fighting") {
+      return "#70231e solid 2px";
+    }
+    if (type === "steel") {
+      return "#98b6c0 solid 2px";
+    }
+    if (type === "ghost") {
+      return "#410c41 solid 2px";
+    }
+    if (type === "psychic") {
+      return "#f7a0ae solid 2px";
+    }
+    if (type === "dragon") {
+      return "black solid 2px";
+    }
+    if (type === "ice") {
+      return "#00d9ff solid 2px";
+    }
+
+    return "black solid 2px";
+  };
+
   useEffect(() => {
     getPokemon();
   }, []);
@@ -86,6 +148,19 @@ const Pokemon = () => {
                   <Typography gutterBottom variant="h5" component="div">
                     #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
                   </Typography>
+                  {pokemon.types.map((type) => (
+                    <Typography
+                      fontSize={15}
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      key={type.slot}
+                      borderRadius="8px"
+                      border={() => checkType(type.type.name)}
+                    >
+                      {capitalizeFirstLetter(type.type.name)}
+                    </Typography>
+                  ))}
                 </CardContent>
               </CardActionArea>
             </Card>
