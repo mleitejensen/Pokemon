@@ -412,7 +412,19 @@
   position: absolute;
   bottom: 2px;
   left: 130px;
-  background-color: blue;
   width: 55px;
   height: 60px;
 }
+
+.area{
+  z-index: 1;
+  background-color: rgba(73, 72, 72, 0.37);
+  border: rgb(65, 63, 63) dashed 5px;
+  transition: 0.5s;
+}
+
+.area:hover{
+  border: solid black;
+  background-color: rgba(128, 128, 128, 0);
+}
+
