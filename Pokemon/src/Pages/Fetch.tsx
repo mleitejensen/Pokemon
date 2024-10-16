@@ -1,6 +1,15 @@
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  CardActionArea,
+} from "@mui/material";
+
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface PokemonName {
   name: string;
@@ -18,6 +27,7 @@ interface Pokemon {
 function Fetch() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const initialized = useRef(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -73,16 +83,20 @@ function Fetch() {
           <>
             <div key={index}>
               <Card sx={{ maxWidth: "100%", margin: "5px" }}>
-                <CardMedia
-                  sx={{ margin: "auto", height: 200, width: 200 }}
-                  image={pokemon.other.sprites.front_default}
-                  title={pokemon.name}
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
-                  </Typography>
-                </CardContent>
+                <CardActionArea
+                  onClick={() => navigate("/pokemon/" + pokemon.name)}
+                >
+                  <CardMedia
+                    sx={{ margin: "auto", height: 200, width: 200 }}
+                    image={pokemon.other.sprites.front_default}
+                    title={pokemon.name}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </Card>
             </div>
           </>

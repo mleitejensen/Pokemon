@@ -4,11 +4,12 @@ import "./App.css";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
+import Navbar from "./Components/Navbar";
+
 import Home from "./Pages/Home";
 import Kanto from "./Pages/Kanto";
-
-import Navbar from "./Components/Navbar";
 import Fetch from "./Pages/Fetch";
+import Pokemon from "./Pages/Pokemon";
 
 const darkTheme = createTheme({
   palette: {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/kanto" element={<Kanto />} />
             <Route path="/fetch" element={<Fetch />} />
+            <Route path="/pokemon/:name" element={<Pokemon />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
