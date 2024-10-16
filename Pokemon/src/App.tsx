@@ -8,6 +8,7 @@ import Home from "./Pages/Home";
 import Kanto from "./Pages/Kanto";
 
 import Navbar from "./Components/Navbar";
+import Fetch from "./Pages/Fetch";
 
 const darkTheme = createTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/kanto" element={<Kanto />} />
+            <Route path="/fetch" element={<Fetch />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

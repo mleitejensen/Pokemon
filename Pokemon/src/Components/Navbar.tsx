@@ -37,7 +37,7 @@ const Navbar = () => {
           icon={<CatchingPokemonIcon />}
         />
         <BottomNavigationAction
-          onClick={() => navigate("/kanto")}
+          onClick={() => navigate("/fetch")}
           label="Coming soon"
           icon={<LocationOnIcon />}
         />
