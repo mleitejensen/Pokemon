@@ -8,6 +8,7 @@ interface PokemonName {
 }
 interface Pokemon {
   name: string;
+  id: number;
   other: {
     sprites: {
       front_default: string;
@@ -34,6 +35,7 @@ function Fetch() {
                   ...Pokemons,
                   {
                     name: response.data.name,
+                    id: response.data.id,
                     other: {
                       sprites: {
                         front_default: response.data.sprites.front_default,
@@ -66,7 +68,7 @@ function Fetch() {
         return (
           <>
             <div key={index}>
-              <Card sx={{ maxWidth: "100%" }}>
+              <Card sx={{ maxWidth: "100%", margin: "5px" }}>
                 <CardMedia
                   sx={{ margin: "auto", height: 200, width: 200 }}
                   image={pokemon.other.sprites.front_default}
@@ -74,7 +76,7 @@ function Fetch() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {pokemon.name}
+                    #{pokemon.id} {pokemon.name}
                   </Typography>
                 </CardContent>
               </Card>
