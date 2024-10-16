@@ -1,8 +1,48 @@
 import Tooltip from "@mui/material/Tooltip";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #000",
+  boxShadow: 24,
+  p: 4,
+};
 
 const Kanto = () => {
+  const [open, setOpen] = useState(false);
+  const [selectedArea, setSelectedArea] = useState<string>();
+  const handleOpen = (area: string) => {
+    setSelectedArea(area);
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+
   return (
     <>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            {selectedArea}
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            List of pokemon in area here...
+          </Typography>
+        </Box>
+      </Modal>
+
       <h1>Kanto</h1>
       <div className="imageDiv">
         <img
@@ -10,127 +50,250 @@ const Kanto = () => {
           alt=""
         ></img>
         <Tooltip title="Indigo Plateau">
-          <div className="indigoPlateau area"></div>
+          <div
+            onClick={() => handleOpen("Indigo Plateau")}
+            className="indigoPlateau area"
+          ></div>
         </Tooltip>
         <Tooltip title="Victory Road">
-          <div className="victoryRoad area"></div>
+          <div
+            onClick={() => handleOpen("Victory Road")}
+            className="victoryRoad area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 23">
-          <div className="route23 area"></div>
+          <div
+            onClick={() => handleOpen("Route 23")}
+            className="route23 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 22">
-          <div className="route22 area"></div>
+          <div
+            onClick={() => handleOpen("Route 22")}
+            className="route22 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Viridian City">
-          <div className="viridianCity area"></div>
+          <div
+            onClick={() => handleOpen("Viridian City")}
+            className="viridianCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 1">
-          <div className="route1 area"></div>
+          <div
+            onClick={() => handleOpen("Route 1")}
+            className="route1 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Pallet Town">
-          <div className="palletTown area"></div>
+          <div
+            onClick={() => handleOpen("Pallet Town")}
+            className="palletTown area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 21">
-          <div className="route21 area"></div>
+          <div
+            onClick={() => handleOpen("Route 21")}
+            className="route21 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 2">
-          <div className="route2 area"></div>
+          <div
+            onClick={() => handleOpen("Route 2")}
+            className="route2 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Viridian Forest">
-          <div className="viridianForest area"></div>
+          <div
+            onClick={() => handleOpen("Viridian Forest")}
+            className="viridianForest area"
+          ></div>
         </Tooltip>
         <Tooltip title="Pewter City">
-          <div className="pewterCity area"></div>
+          <div
+            onClick={() => handleOpen("Pewter City")}
+            className="pewterCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 3">
-          <div className="route3 area"></div>
+          <div
+            onClick={() => handleOpen("Route 3")}
+            className="route3 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Mount Moon">
-          <div className="mountainMoon area"></div>
+          <div
+            onClick={() => handleOpen("Mount Moon")}
+            className="mountainMoon area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 4">
-          <div className="route4 area"></div>
+          <div
+            onClick={() => handleOpen("Route 4")}
+            className="route4 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Cerulean City">
-          <div className="ceruleanCity area"></div>
+          <div
+            onClick={() => handleOpen("Cerulean City")}
+            className="ceruleanCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 24">
-          <div className="route24 area"></div>
+          <div
+            onClick={() => handleOpen("Route 24")}
+            className="route24 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 25">
-          <div className="route25 area"></div>
+          <div
+            onClick={() => handleOpen("Route 25")}
+            className="route25 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 5">
-          <div className="route5 area"></div>
+          <div
+            onClick={() => handleOpen("Route 5")}
+            className="route5 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 6">
-          <div className="route6 area"></div>
+          <div
+            onClick={() => handleOpen("Route 6")}
+            className="route6 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Vermilion City">
-          <div className="vermilionCity area"></div>
+          <div
+            onClick={() => handleOpen("Vermilion City")}
+            className="vermilionCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 7">
-          <div className="route7 area"></div>
+          <div
+            onClick={() => handleOpen("Route 7")}
+            className="route7 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 11">
-          <div className="route11 area"></div>
+          <div
+            onClick={() => handleOpen("Route 11")}
+            className="route11 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 12">
-          <div className="route12 area"></div>
+          <div
+            onClick={() => handleOpen("Route 12")}
+            className="route12 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Lavender Town">
-          <div className="lavenderTown area"></div>
+          <div
+            onClick={() => handleOpen("Lavender Town")}
+            className="lavenderTown area"
+          ></div>
         </Tooltip>
         <Tooltip title="Rock Tunnel">
-          <div className="rockTunnel area"></div>
+          <div
+            onClick={() => handleOpen("Rock Tunnel")}
+            className="rockTunnel area"
+          ></div>
         </Tooltip>
         <Tooltip title="Power Plant">
-          <div className="powerPlant area"></div>
+          <div
+            onClick={() => handleOpen("Power Plant")}
+            className="powerPlant area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 9">
-          <div className="route9 area"></div>
+          <div
+            onClick={() => handleOpen("Route 9")}
+            className="route9 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Celadon City">
-          <div className="celadonCity area"></div>
+          <div
+            onClick={() => handleOpen("Celadon City")}
+            className="celadonCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 8">
-          <div className="route8 area"></div>
+          <div
+            onClick={() => handleOpen("Route 8")}
+            className="route8 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 16">
-          <div className="route16 area"></div>
+          <div
+            onClick={() => handleOpen("Route 16")}
+            className="route16 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Cycling Road">
-          <div className="cyclingRoad area"></div>
+          <div
+            onClick={() => handleOpen("Cycling Road")}
+            className="cyclingRoad area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 18">
-          <div className="route18 area"></div>
+          <div
+            onClick={() => handleOpen("Route 18")}
+            className="route18 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Safari Zone">
-          <div className="safariZone area"></div>
+          <div
+            onClick={() => handleOpen("Safari Zone")}
+            className="safariZone area"
+          ></div>
         </Tooltip>
         <Tooltip title="Fuchsia City">
-          <div className="fuchsiaCity area"></div>
+          <div
+            onClick={() => handleOpen("Fuchsia City")}
+            className="fuchsiaCity area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 13">
-          <div className="route13 area"></div>
+          <div
+            onClick={() => handleOpen("Route 13")}
+            className="route13 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 14">
-          <div className="route14 area"></div>
+          <div
+            onClick={() => handleOpen("Route 14")}
+            className="route14 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 15">
-          <div className="route15 area"></div>
+          <div
+            onClick={() => handleOpen("Route 15")}
+            className="route15 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 19">
-          <div className="route19 area"></div>
+          <div
+            onClick={() => handleOpen("Route 19")}
+            className="route19 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Seafoam Islands">
-          <div className="seafoamIslands area"></div>
+          <div
+            onClick={() => handleOpen("Seafoam Islands")}
+            className="seafoamIslands area"
+          ></div>
         </Tooltip>
         <Tooltip title="Route 20">
-          <div className="route20 area"></div>
+          <div
+            onClick={() => handleOpen("Route 20")}
+            className="route20 area"
+          ></div>
         </Tooltip>
         <Tooltip title="Cinnabar Island">
-          <div className="cinnabarIsland area"></div>
+          <div
+            onClick={() => handleOpen("Cinnabar Island")}
+            className="cinnabarIsland area"
+          ></div>
         </Tooltip>
       </div>
     </>
