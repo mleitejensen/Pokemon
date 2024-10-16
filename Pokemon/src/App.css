@@ -1,0 +1,229 @@
+#root {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.imageDiv{
+  position: relative;
+  margin: auto;
+  width: 900px;
+  height: 883px;
+}
+
+.indigoPlateau{
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+
+}
+
+.victoryRoad{
+  position: absolute;
+  top: 110px;
+  left: 0px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route23{
+  position: absolute;
+  top: 320px;
+  left: 0px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route22{
+  position: absolute;
+  top: 420px;
+  left: 0px;
+  background-color: blue;
+  width: 100px;
+  height: 50px;
+}
+
+.viridianCity{
+  position: absolute;
+  top: 410px;
+  left: 125px;
+  background-color: blue;
+  width: 65px;
+  height: 65px;
+}
+
+.route1{
+  position: absolute;
+  top: 510px;
+  left: 130px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.palletTown{
+  position: absolute;
+  top: 580px;
+  left: 130px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route21{
+  position: absolute;
+  top: 680px;
+  left: 130px;
+  background-color: blue;
+  width: 55px;
+  height: 120px;
+}
+
+.route2{
+  position: absolute;
+  top: 260px;
+  left: 170px;
+  background-color: blue;
+  width: 15px;
+  height: 100px;
+}
+
+.viridianForest{
+  position: absolute;
+  top: 260px;
+  left: 130px;
+  background-color: blue;
+  width: 30px;
+  height: 100px;
+}
+
+.pewterCity{
+  position: absolute;
+  top: 140px;
+  left: 120px;
+  background-color: blue;
+  width: 75px;
+  height: 70px;
+}
+
+.route3{
+  position: absolute;
+  top: 155px;
+  left: 240px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.mountainMoon{
+  position: absolute;
+  top: 110px;
+  left: 350px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route4{
+  position: absolute;
+  top: 110px;
+  left: 450px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.ceruleanCity{
+  position: absolute;
+  top: 110px;
+  left: 600px;
+  background-color: blue;
+  width: 75px;
+  height: 60px;
+}
+
+.route5{
+  position: absolute;
+  top: 180px;
+  left: 617px;
+  background-color: blue;
+  width: 35px;
+  height: 70px;
+}
+
+.route6{
+  position: absolute;
+  top: 380px;
+  left: 610px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route7{
+  position: absolute;
+  top: 285px;
+  left: 740px;
+  background-color: blue;
+  width: 55px;
+  height: 45px;
+}
+
+.vermilionCity{
+  position: absolute;
+  top: 450px;
+  left: 610px;
+  background-color: blue;
+  width: 55px;
+  height: 50px;
+}
+
+.route11{
+  position: absolute;
+  top: 465px;
+  left: 740px;
+  background-color: blue;
+  width: 55px;
+  height: 45px;
+}
