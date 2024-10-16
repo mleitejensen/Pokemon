@@ -55,6 +55,10 @@ function Fetch() {
       });
   }, []);
 
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   return (
     <Box
       sx={{
@@ -76,7 +80,7 @@ function Fetch() {
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    #{pokemon.id} {pokemon.name}
+                    #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
                   </Typography>
                 </CardContent>
               </Card>
