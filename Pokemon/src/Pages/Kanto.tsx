@@ -2,7 +2,7 @@ import Tooltip from "@mui/material/Tooltip";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const style = {
   position: "absolute",
@@ -16,14 +16,92 @@ const style = {
   p: 4,
 };
 
+interface Areas {
+  locations: Array<Area>;
+}
+interface Area {
+  name: string;
+  pokemon: Array<Pokemon>;
+}
+
+interface Pokemon {
+  name: string;
+  id: number;
+  image: string;
+}
+
 const Kanto = () => {
   const [open, setOpen] = useState(false);
   const [selectedArea, setSelectedArea] = useState<string>();
+
+  const initialState: Areas = { locations: [] };
+  const [areas, setAreas] = useState<Areas>(initialState);
+
   const handleOpen = (area: string) => {
     setSelectedArea(area);
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
+
+  const getLocations = async () => {
+    const locationMap: { [key: string]: Area } = {};
+
+    for (let i = 1; i <= 150; i++) {
+      try {
+        const response = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${i}/encounters`
+        );
+        const json: Array<{ location_area: { name: string } }> =
+          await response.json();
+
+        const detailsResponse = await fetch(
+          `https://pokeapi.co/api/v2/pokemon/${i}`
+        );
+        const pokemonDetails = await detailsResponse.json();
+        const newPokemon: Pokemon = {
+          name: pokemonDetails.name,
+          id: pokemonDetails.id,
+          image: pokemonDetails.sprites.front_default,
+        };
+
+        json.forEach((element) => {
+          const locationName = element.location_area.name;
+          if (
+            locationName.includes("kanto") ||
+            locationName.includes("viridian") ||
+            locationName.includes("cinnabar") ||
+            locationName.includes("indigo") ||
+            locationName.includes("mt-moon") ||
+            locationName.includes("seafoam") ||
+            locationName.includes("rock-tunnel") ||
+            locationName.includes("kanto-safari-zone")
+          ) {
+            if (!locationMap[locationName]) {
+              locationMap[locationName] = { name: locationName, pokemon: [] };
+            }
+
+            if (
+              !locationMap[locationName].pokemon.some(
+                (p) => p.id === newPokemon.id
+              )
+            ) {
+              locationMap[locationName].pokemon.push(newPokemon);
+            }
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+
+    const newLocations = Object.values(locationMap);
+    console.log(newLocations);
+    setAreas({ locations: newLocations });
+  };
+
+  useEffect(() => {
+    getLocations();
+  }, []);
 
   return (
     <>
