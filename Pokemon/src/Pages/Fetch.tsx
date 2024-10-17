@@ -5,6 +5,7 @@ import {
   CardMedia,
   Typography,
   CardActionArea,
+  Skeleton,
 } from "@mui/material";
 
 import axios from "axios";
@@ -27,6 +28,7 @@ interface Pokemon {
 function Fetch() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
   const initialized = useRef(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -71,8 +73,10 @@ function Fetch() {
 
   useEffect(() => {
     console.log(pokemons.length);
-    if (pokemons.length == 151)
+    if (pokemons.length == 151) {
       setPokemons((Pokemons) => [...Pokemons].sort((a, b) => a.id - b.id));
+      setIsLoading(false);
+    }
   }, [pokemons.length]);
 
   return (
@@ -88,22 +92,28 @@ function Fetch() {
         return (
           <>
             <div key={index}>
-              <Card sx={{ maxWidth: "100%", margin: "5px" }}>
-                <CardActionArea
-                  onClick={() => navigate("/pokemon/" + pokemon.name)}
-                >
-                  <CardMedia
-                    sx={{ margin: "auto", height: 200, width: 200 }}
-                    image={pokemon.other.sprites.front_default}
-                    title={pokemon.name}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              {!isLoading ? (
+                <Card sx={{ maxWidth: "100%", margin: "5px" }}>
+                  <CardActionArea
+                    onClick={() => navigate("/pokemon/" + pokemon.name)}
+                  >
+                    <CardMedia
+                      sx={{ margin: "auto", height: 200, width: 200 }}
+                      image={pokemon.other.sprites.front_default}
+                      title={pokemon.name}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        #{pokemon.id} {capitalizeFirstLetter(pokemon.name)}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              ) : (
+                <Skeleton sx={{ maxWidth: "100%", margin: "5px" }}>
+                  <CardMedia sx={{ margin: "auto", height: 200, width: 200 }} />
+                </Skeleton>
+              )}
             </div>
           </>
         );
