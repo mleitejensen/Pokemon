@@ -69,6 +69,12 @@ function Fetch() {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
+  useEffect(() => {
+    console.log(pokemons.length);
+    if (pokemons.length == 151)
+      setPokemons((Pokemons) => [...Pokemons].sort((a, b) => a.id - b.id));
+  }, [pokemons.length]);
+
   return (
     <Box
       sx={{
