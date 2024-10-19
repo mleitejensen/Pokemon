@@ -430,6 +430,15 @@
 
 .grid{
   display: grid;
-  grid-template-columns: 30% 30% 30%;
+  grid-template-columns: 25% 25% 25% 25%;
 }
 
+.gridItem{
+  margin: auto;
+  text-align: center;
+  box-shadow:2px 3px 5px #1a1818;
+}
+
+.areaBox{
+  overflow-y: auto;
+}
