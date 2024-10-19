@@ -165,10 +165,15 @@ const Kanto = () => {
                       sx={{ maxWidth: "100%", margin: "5px" }}
                     >
                       <CardActionArea
+                        sx={{ height: "100%" }}
                         onClick={() => navigate("/pokemon/" + poke.name)}
                       >
                         <CardMedia
-                          sx={{ margin: "auto", height: 200, width: 200 }}
+                          sx={{
+                            margin: "auto",
+                            minHeight: 200,
+                            minWidth: 200,
+                          }}
                           image={poke.image}
                           title={poke.name}
                         />
